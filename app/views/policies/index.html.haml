@@ -1,0 +1,17 @@
+= link_to 'Dodaj nową polisę', new_policy_path
+
+%table.table.table-striped
+  %tr
+    %th Numer
+    %th Klient
+    %th Składka
+    %th Prowizja
+    %th
+  - @policies.each do |policy|
+    %tr
+      %td= policy.number
+      %td= policy.client
+      %td= policy.collection
+      %td= policy.commission
+      %td= link_to 'Edytuj', edit_policy_path(policy)
+  

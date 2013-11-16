@@ -1,0 +1,14 @@
+= simple_form_for @policy do |f|
+  .row
+    .span4
+      = f.input :number
+      = f.input :client
+    .span4
+      = f.association :products, as: :check_boxes, input_html: {class: 'product'}
+  .form-actions
+    .pull-right
+      Składka:
+      %span#collection
+        0 zł
+    = f.submit
+    = link_to 'Anuluj', :back
