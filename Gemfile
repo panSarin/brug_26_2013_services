@@ -22,4 +22,14 @@ end
 
 gem 'jquery-rails'
 
+group :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails', '>= 2.10.1'
+  gem 'capybara'   , '>= 2.0.0'
+  gem 'selenium-webdriver', '>= 2.32.0'
+  gem 'database_cleaner'
+  gem 'pry'
+end
+
+
 

@@ -11,6 +11,7 @@ Policy.prototype.count_collection = ->
   }).done( (result) ->
     console.debug result
     $("#collection").html(result+"zł")
+    $('#policy_collection').val(result)
   )
 
 

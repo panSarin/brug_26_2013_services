@@ -29,7 +29,7 @@
             %h3 Sidebar
             %ul.nav.nav-list
               %li.nav-header
-              %li= link_to 'Panel administratora', admin_policies_path if current_user.role? 'admin'
-     
+              %li= link_to 'Panel administratora', admin_policies_path if current_user.present? && current_user.role?('admin')
+
       %footer
         %p &copy; Company 2013
