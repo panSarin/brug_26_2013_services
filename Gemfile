@@ -29,9 +29,6 @@ group :test do
   gem 'selenium-webdriver', '>= 2.32.0'
   gem 'database_cleaner'
   gem 'pry'
-  gem 'growl'
-  gem 'steak'
-
 end
 
 
