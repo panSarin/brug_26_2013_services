@@ -7,4 +7,4 @@ Our goals:
 3) DRY
 
 4) * replace acceptance selenium tests that could fail durin long ajax request
-(in our case f.e. if products searching would be too long) to something more reliable.
+(in our case  if products searching or recalculation collection would be too long) to something more reliable.
