@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
-
+gem 'amberbit-config', git: 'git://github.com/amberbit/amberbit-config.git'
 gem 'cancan'
 gem 'devise'
 gem 'haml-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'pg'
+gem 'rails', '3.2.13'
+gem 'rails3-jquery-autocomplete'
 gem 'simple_form'
-gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,8 +22,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-
 group :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails', '>= 2.10.1'
@@ -29,6 +29,9 @@ group :test do
   gem 'selenium-webdriver', '>= 2.32.0'
   gem 'database_cleaner'
   gem 'pry'
+  gem 'growl'
+  gem 'steak'
+
 end
 
 

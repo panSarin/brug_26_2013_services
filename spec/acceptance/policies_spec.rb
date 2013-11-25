@@ -15,13 +15,14 @@ I want to ' do
     visit new_policy_path
     fill_in 'Number', with: '1234'
     fill_in 'Client', with: 'Lorem client'
-    check 'policy_product_ids_1'
-    check 'policy_product_ids_3'
-    check 'policy_product_ids_4'
+    check "AC"
+    check "NNW"
     click_on 'Create policy'
     page.should have_content 'Polisa zapisana'
-    Policy.first.number.should == '1234'
-    Policy.first.collection.should == 550
+    policy = Policy.last
+    policy.number.should == '1234'
+    policy.collection.should == 250
+    policy.products.count.should == 2
   end
 
 end
