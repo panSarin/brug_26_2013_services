@@ -10,5 +10,6 @@
       Składka:
       %span#collection
         0 zł
+      = hidden_field_tag 'policy[collection]', @policy.collection
     = f.submit
     = link_to 'Anuluj', :back

@@ -13,4 +13,6 @@ ServicesDemo::Application.routes.draw do
     resources :policies
   end
 
+  get '/autologin' => 'sessions#autologin' if Rails.env.test?
+
 end
