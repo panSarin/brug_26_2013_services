@@ -17,7 +17,7 @@ class PolicyService
       policy.save
       @notice = 'Policy created'
     else
-      policy.errors[:messages] << {commission: 'Brak uprawnień do edycji prowizji'}
+      policy.errors[:messages] << {commission: 'Not enought privilages'}
       @alert = 'Policy not created - not enough privilages to change commission'
     end
     {policy: policy, notice: @notice, alert: @alert}
@@ -29,7 +29,7 @@ class PolicyService
       policy.update_attributes(@params[:policy].merge({audit_params: @params, audit_referer: @request.referer}))
       @notice = 'Policy updated'
     else
-      policy.errors[:messages] << {commission: 'Brak uprawnień do edycji prowizji'}
+      policy.errors[:messages] << {commission: 'Not enought privilages'}
       @alert = 'Policy not updated - not enough privilages to change commission'
     end
     {policy: policy, notice: @notice, alert: @alert}
