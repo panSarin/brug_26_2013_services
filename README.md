@@ -1,10 +1,7 @@
-Our goals:
+What we changed:
 
-1) Make all changes in policies logged. We need to know when and what was changed, who changed it, http_referer and params.
-
-2) Protect policy to change commission from user that have no admin role.
-
-3) DRY
-
-4) * replace acceptance selenium tests that could fail durin long ajax request
-(in our case  if products searching or recalculation collection would be too long) to something more reliable.
+ - added audited GEM for logging changes ( rails generate audited:install after bundle)
+ - added service
+ - in controllers we call policy_service.process_create or policy_service.process_update instead of repeating the same code in both controller
+ - in service we log changes, and check privilages to change commission, also set the notices/alerts
+ - controller is now only responsable for getting request and respond to it - what is done with data is in service
