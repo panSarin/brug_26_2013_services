@@ -5,22 +5,25 @@ class PoliciesController < AuthenticationController
   end
 
   def create
-    @policy = Policy.new(params[:policy].merge({user_id: current_user.id}))
-    if @policy.save
-      flash[:notice] = 'Polisa zapisana'
+    result = policy_service.process_create
+    @policy = result[:policy]
+    set_flash_message(result)
+    if @policy.persisted?
+      redirect_to policies_path
     else
-      flash[:alert] = 'Błąd podczas zapisu polisy'
+      render :new
     end
-    redirect_to policies_path
   end
 
   def update
-    if @policy.update_attributes(params[:policy])
-      flash[:notice] = 'Polisa zaktualizowana'
+    result = policy_service.process_update
+    @policy = result[:policy]
+    set_flash_message(result)
+    if @policy.errors.blank?
+      redirect_to policies_path
     else
-      flash[:alert] = 'Polisa nie została zaktualizowana'
+      render :show
     end
-    redirect_to policies_path
   end
 
   def count
@@ -29,6 +32,11 @@ class PoliciesController < AuthenticationController
       result = result + Product.find(product).price
     end
     render json: result.to_json
+  end
+
+  private
+  def policy_service
+    PolicyService.new(current_user, params, request)
   end
 
 

@@ -4,6 +4,15 @@ GIT
   specs:
     amberbit-config (1.2.1)
 
+GIT
+  remote: git://github.com/dawidlenkiewicz/audited.git
+  revision: 6ac76fd797c41e43578c2c5b8bcda457a0180138
+  specs:
+    audited (3.0.0)
+    audited-activerecord (3.0.0)
+      activerecord (~> 3.0)
+      audited (= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -188,6 +197,7 @@ PLATFORMS
 
 DEPENDENCIES
   amberbit-config!
+  audited-activerecord!
   cancan
   capybara (>= 2.0.0)
   coffee-rails (~> 3.2.1)

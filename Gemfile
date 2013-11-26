@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'amberbit-config', git: 'git://github.com/amberbit/amberbit-config.git'
+gem "audited-activerecord", git: 'git://github.com/dawidlenkiewicz/audited.git'
 gem 'cancan'
 gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg'
+gem 'pry'
 gem 'rails', '3.2.13'
 gem 'rails3-jquery-autocomplete'
 gem 'simple_form'
@@ -28,7 +30,6 @@ group :test do
   gem 'capybara'   , '>= 2.0.0'
   gem 'selenium-webdriver', '>= 2.32.0'
   gem 'database_cleaner'
-  gem 'pry'
 end
 
 
