@@ -11,7 +11,7 @@ class Admin::PoliciesController < AdminController
     else
       flash[:alert] = 'Błąd podczas zapisu polisy'
     end
-    redirect_to :index
+    redirect_to admin_policies_path
   end
 
   def update
@@ -20,7 +20,7 @@ class Admin::PoliciesController < AdminController
     else
       flash[:alert] = 'Polisa nie została zaktualizowana'
     end
-    redirect_to :index
+    redirect_to admin_policies_path
   end
 
 
