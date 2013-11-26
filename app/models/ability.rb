@@ -5,7 +5,6 @@ class Ability
 
     if user.role?('admin')
      can :manage, :all
-     can :change_commission, Policy
     end
 
     if user.role?('basic')
