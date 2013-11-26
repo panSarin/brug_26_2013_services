@@ -1,5 +1,4 @@
 class PolicyService
-  include CanCan::Ability
   attr_reader :current_user, :params, :request
 
   def initialize(current_user, params, request)

@@ -22,7 +22,7 @@ class PoliciesController < AuthenticationController
     if @policy.errors.blank?
       redirect_to policies_path
     else
-      render :show
+      render :edit
     end
   end
 
